@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using lab_0.Services;
 
 namespace lab_0.Entities;
@@ -7,25 +8,21 @@ internal class BubbleSort : ISorting
 {
     private List<double> _array = new List<double>();
     private Stopwatch _stopwatch = new Stopwatch();
-    private int _counter = 0;
 
-    public BubbleSort(List<double> Array)
-    {
-        _array = Array;
-    }
-    
+    public BubbleSort(List<double> Array)=> _array = Array;
+
     void ISorting.Sorting()
     {
-        Console.WriteLine("\n\tThe original array:\n");
-        
-        foreach (var number in _array)
-        {
-            _counter++;
-            Console.WriteLine($"{_counter}{")"}   {number.ToString("F" + 4)}");
-        }
-
-        _counter = 0;
-        Console.WriteLine();
+        // Console.WriteLine("\n\tThe original array:\n");
+        //
+        // foreach (var number in _array)
+        // {
+        //     _counter++;
+        //     Console.WriteLine($"{_counter})   {number.ToString("F" + 4)}");
+        // }
+        //
+        // _counter = 0;
+        // Console.WriteLine();
         
         _stopwatch.Start();
         
@@ -44,16 +41,23 @@ internal class BubbleSort : ISorting
         
         _stopwatch.Stop();
         
-        Console.WriteLine("\tSorted array by bubble method:\n");
-        
-        foreach (var number in _array)
-        {
-            _counter++;
-            Console.WriteLine($"{_counter}{")"}   {number.ToString("F" + 4)}");
-        }
+        // Console.WriteLine("\tSorted array by bubble method:\n");
+        //
+        // foreach (var number in _array)
+        // {
+        //     _counter++;
+        //     Console.WriteLine($"{_counter})   {number.ToString("F" + 4)}");
+        // }
+        //
+        // _counter = 0;
 
-        _counter = 0;
-
-        Console.WriteLine($"{"\nSorting asymptotics:"} {_stopwatch.ElapsedMilliseconds} {"milliseconds"}");
+        // Console.WriteLine($"{"\nSorting asymptotics:"} {_stopwatch.ElapsedMilliseconds} {"milliseconds"}");
     }
+
+    private static Derivation obj = new Derivation();
+    
+    public delegate double Message(List<double> Array);
+
+    //public Message mes = new Message(obj.PrintTheOriginalArray(_array));
+    
 }

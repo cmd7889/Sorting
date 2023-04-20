@@ -21,13 +21,7 @@ internal class Generation
         }
     }
 
-    public void SetSorting(ISorting sorting)
-    {
-        _sorting = sorting;
-    }
+    public void SetSorting(ISorting sorting)=> _sorting = sorting;
 
-    public void Sorting()
-    {
-        _sorting.Sorting();
-    }
+    public void Sorting()=> _sorting.Sorting();
 }

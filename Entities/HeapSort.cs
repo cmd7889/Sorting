@@ -9,11 +9,8 @@ internal class HeapSort : ISorting
     private Stopwatch _stopwatch = new Stopwatch();
     private int _counter = 0;
 
-    public HeapSort(List<double> Array)
-    {
-        _array = Array;
-    }
-    
+    public HeapSort(List<double> Array)=> _array = Array;
+
     void ISorting.Sorting()
     {
         Console.WriteLine("\n\tThe original array:\n");

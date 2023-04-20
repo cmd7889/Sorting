@@ -9,11 +9,8 @@ internal class SelectionSort : ISorting
     private Stopwatch _stopwatch = new Stopwatch();
     private int _counter = 0;
 
-    public SelectionSort(List<double> Array)
-    {
-        _array = Array;
-    }
-    
+    public SelectionSort(List<double> Array)=> _array = Array;
+
     void ISorting.Sorting()
     {
         Console.WriteLine("\n\tThe original array:\n");
